@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.acme";
+
+package org.acme;
+
+service WeeklyPlaner {
+  rpc createWeeklyPlan (WeeklyPlanRequest) returns (WeeklyPlanReply) {}
+}
+
+message WeeklyPlanRequest {
+  repeated string school_classes = 1;
+  string week_from = 2;
+  string week_to = 3;
+  repeated Task tasks = 4;
+}
+
+message Task {
+  string subject = 1;
+  string description = 2;
+}
+
+message WeeklyPlanReply {
+  bytes report = 1;
+}

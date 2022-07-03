@@ -1,0 +1,2 @@
+# Download protoc-gen-grpc-web first and put it on your PATH.
+protoc ./proto/weeklyplan.proto --grpc-web_out=import_style=typescript,mode=grpcwebtext:generated --js_out=import_style=commonjs,binary:generated
